@@ -1,0 +1,23 @@
+{% extends 'accounts/nav.html' %}
+
+{% block content %}
+<h1>Sign up as:</h1>
+<ul>
+    <li class="mb-5">
+        <a href="{% url 'signup_doctor' %}">
+        <div class="btn btn-lg btn-primary">
+
+           I am a Doctor
+        </div>
+    </a>
+    </li>
+    <li><a href="{% url 'signup_patient' %}">
+        
+        <div class="btn btn-lg btn-primary">
+        
+            I am a Patient
+        </div>
+        </a>
+        </li>
+</ul>
+{% endblock content %}
