@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     # Apps
     'debug_toolbar',
     "accounts",
+    "appoinment",
 
 ]
 
