@@ -1,13 +1,62 @@
-{% extends 'accounts/nav.html' %}
-<br>
-<br>
-{% block content %}
-    <form method="post" class="loginform ">
-   
-            {% csrf_token %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/login.css' %}">
+</head>
+
+<body>
+
+
+    
+    <div class="grid">
+        <div class="order__left centered">
+           <div class="form">
+              <div class="logo">
+                 <h1 style="    color: darkorchid;
+                 font-size: xxx-large;
+                 font-family: cursive;
+
+             ">Healthify</h1>
+              </div>
+
+              <h4>
+              We're re-branding expensive insurance by calling it "benefits" because we can live without you, but you can't live without us.
+              </h4>
+              <form method="post" class="loginform ">
+                {% csrf_token %}
+              <input type="text" id="username" name="username" placeholder="Email" autocomplete="off">{{forms.username}}
+              <input type="password" id="password" name="password" placeholder="Password" autocomplete="off">{{forms.password}}
+             
+              <div class="justify__space_between">   
+                 <span>
+                 <input type="checkbox" id="remember_me" name="remember_me" value="remember_me">
+                 <label for="remember_me" class="remember_me">Remember Me</label><br>
+                 </span>
+                 <a href="#" class="forgot__password">Forgot Password?</a>
+              </div>
             
-            {{form}}
-            <button type="submit"  class="btn btn-primary">Log In</button>
+              <button type="submit" class="login__button">Login</button>
+            </form> 
+              
+              <div class="signup">
+                 <label class="remember_me">
+                 Don't have an account?</label><a href="{% url 'signup' %}" class="forgot__password" style="text-decoration: none;"><strong>Sign up for free.</strong></a>
+              </div>
+
+           </div>
+        </div><!-- order__left centered -->
         
-    </form>
-{% endblock content %}
+        <div class="order__right centered no__overflow">
+           <img class="img" src="https://res.cloudinary.com/diod8pjhj/image/upload/v1670658158/3d1920_e2qpuj.jpg" alt="picture">
+        </div><!-- order__right centered no__overflow -->
+
+     </div><!-- end grid -->
+
+</div>
+</body>
+</html>

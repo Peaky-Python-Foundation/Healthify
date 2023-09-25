@@ -27,9 +27,25 @@
       <a href="#blog">blog</a>
     </nav>
     <!--   end navbar -->
+
+    {% if user.is_authenticated %}
+    {% if user.is_patient %}
     <a href="" class="btn">make appointment</a>
+    <a href="{% url 'logout' %}"  class="btn">Logout</a>
+    {% else %}
+    <a href="" class="btn">view appointment</a>
+    <a href="{% url 'logout' %}"  class="btn">Logout</a>
+    {% endif %}
+    
+    <div id="menu-btn" class="fas fa-bars">
+      
+    </div>
+
+    {% else %}
+    <a href="{% url 'login' %}" class="btn">Login</a>
     <div id="menu-btn" class="fas fa-bars"></div>
-  
+
+    {% endif %}
   </header>
   <!-- end header -->
   

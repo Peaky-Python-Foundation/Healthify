@@ -1,16 +1,177 @@
-{% extends 'accounts/nav.html' %}
-{% block content %}
-<form method="POST" enctype="multipart/form-data" class="signupform">
-    {% csrf_token %}
-{% if form.errors %}
-    <div class="alert alert-danger" role="alert">
-        {{form.errors}}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body {
+        background-color: #f0f0f0;
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+    }
+
+    .container {
+        display: flex;
+        justify-content: space-between;
+        max-width: 1200px; /* Adjust this width as needed */
+        margin: 0 auto;
+        padding: 20px;
+        color: darkcyan;
+        border-color:darkcyan;
+    }
+
+    /* Style the form container */
+    .signup-container {
+        flex: 1; /* This allows the form container to take up half of the available space */
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .signup-container h2 {
+        text-align: center;
+        color: #007BFF;
+    }
+
+    .form-group {
+        margin-bottom: 20px;
+    }
+
+    .form-label {
+        display: block;
+        font-weight: bold;
+        margin-bottom: 5px;
+        color: #555;
+    }
+
+    .form-input {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 16px;
+    }
+
+    .btn-submit {
+        width: 100%;
+        background-color: #007BFF;
+        color: #fff;
+        border: none;
+        padding: 12px;
+        border-radius: 5px;
+        font-size: 18px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    .btn-submit:hover {
+        background-color: orange;
+    }
+
+    .error-message {
+        color: #ff0000;
+        font-size: 14px;
+    }
+
+    /* Style the image container */
+    .image-container {
+        flex: 1; /* This allows the image container to take up half of the available space */
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 8px;
+        padding-top: 100px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Style the image */
+    .image {
+        max-width: 100%;
+        height: auto;
+        display: block;
+        margin: 0 auto;
+    }
+</style>
+
+<body>
+    <div class="container">
+        <!-- Your signup form code on the left side -->
+        <div class="signup-container">
+            <h1 class="form-title">Register Here</h1>
+            <form method="POST" enctype="multipart/form-data" class="signup-form">
+                {% csrf_token %}
+                {% if form.errors %}
+                <div class="alert alert-danger" role="alert">
+                    {{form.errors}}
+                </div>
+                {% endif %}
+                <div class="form-group">
+                    <label for="{{ form.username.id_for_label }}">Username:</label>
+                    {{ form.username }}
+                </div>
+                
+                <div class="form-group">
+                    <label for="{{ form.first_name.id_for_label }}">First Name:</label>
+                    {{ form.first_name }}
+                </div>
+            
+                <div class="form-group">
+                    <label for="{{ form.last_name.id_for_label }}">Last Name:</label>
+                    {{ form.last_name }}
+                </div>
+                
+                <div class="form-group">
+                    <label for="{{ form.email.id_for_label }}">Email:</label>
+                    {{ form.email }}
+                </div>
+                
+                <div class="form-group">
+                    <label for="{{ form.line.id_for_label }}">Address Line:</label>
+                    {{ form.line }}
+                </div>
+                
+                <div class="form-group">
+                    <label for="{{ form.city.id_for_label }}">City:</label>
+                    {{ form.city }}
+                </div>
+                
+                <div class="form-group">
+                    <label for="{{ form.state.id_for_label }}">State:</label>
+                    {{ form.state }}
+                </div>
+                
+                <div class="form-group">
+                    <label for="{{ form.pincode.id_for_label }}">Pincode:</label>
+                    {{ form.pincode }}
+                </div>
+                
+                <div class="form-group">
+                    <label for="{{ form.password1.id_for_label }}">Password:</label>
+                    {{ form.password1 }}
+                </div>
+                
+                <div class="form-group">
+                    <label for="{{ form.password2.id_for_label }}">Confirm Password:</label>
+                    {{ form.password2 }}
+                </div>
+                <button type="submit" class="btn btn-success" style="color:darkcyan; font-size:20px">Sign Up</button>
+            
+            </form>
+        </div>
+        
+        <!-- Image container on the right side -->
+        <div class="image-container">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQYYVOtKWov_hn_mzo8BGyoHSJo40e48cDo_A&usqp=CAU" alt="Your Image" class="image">
+        </div>
     </div>
-{% endif %}
-    {% for field in form %}
-        {{field.label_tag}}
-        {{field}}
-    {% endfor %}
-    <button type="submit" class="btn btn-success">Sign Up</button>
-</form>
-{% endblock content %}
+</body>
+
+</html>
+
+
