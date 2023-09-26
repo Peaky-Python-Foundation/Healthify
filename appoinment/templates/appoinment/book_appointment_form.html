@@ -1,7 +1,37 @@
-<form method="POST" class="appointment_form">
-    {% csrf_token %}
-    {{form}}
-    <button class="btn btn-success">Book Appointment</button>
-</form>
+{% extends "accounts/nav.html" %}
+{% load static %}
+    {% block content %}
+    <section id="contact" class="contact">
+    
+        <h1 class="heading">make appointment</h1>
+        
+        <form method="POST" class="appointment_form">
+            {% csrf_token %}
+          
+          <span>your name:</span>
+          <div class="input-box">
+            <input type="text" placeholder="First name">
+            <input type="text" placeholder="last name">
+            <!-- {{form}} -->
+          </div>
+          
+          <span>your email:</span>
+          <input type="email" class="box" placeholder="enter your email" >
+          
+           <span>your number:</span>
+           <input type="number" class="box" placeholder="enter your number" >
+          
+           <span>appointment date:</span>
+           {{form.date}}
+           <span>time:</span>
+           {{form.time}}
+           
+            <span>  Speciality:  </span>
+           <input type="text"  class ="box" name="{{ form.speciality.name }}" id="{{ form.speciality.id_for_label }}"
+           placeholder="Speciality">
+          <input type="submit" class="btn" value="Appointment Now">
+          
+        </form>
+      </section>
 
-
+      {% endblock content %}
