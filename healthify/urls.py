@@ -27,7 +27,7 @@ urlpatterns = [
     path('__debug__/', include(debug_toolbar.urls)),
     # Account App
     path('',include('accounts.urls')),
-    path('appoinment/',include('appoinment')),
+    path('appoinment/',include('appoinment.urls')),
 ]
 
 

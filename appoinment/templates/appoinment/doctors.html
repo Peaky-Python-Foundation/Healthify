@@ -1,0 +1,18 @@
+{% for doctor in object_list %}
+<div class="card mb-3" style="max-width: 100%; max-height: 20%;">
+    <div class="row g-0">
+        <div class="col-md-4"
+            style="background-image: url('{{ doctor.profile_picture.url }}'); background-size: cover; background-repeat: no-repeat;">
+        </div>
+        <div class="col-md-8">
+            <div class="card-body">
+                <h5 class="card-title">{{doctor.first_name}} {{doctor.last_name}}</h5>
+                <p class="card-text"><small class="text-muted">email: {{doctor.email}}</small></p>
+                <a href="{% url 'book_appointment' doctor.pk %}">
+                    <p class="btn btn-lg btn-success">Book Appintment</p>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endfor %}
