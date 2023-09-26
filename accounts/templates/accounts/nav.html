@@ -27,12 +27,14 @@
       <a href="#blog">blog</a>
     </nav>
     <!--   end navbar -->
+    {% if user.is_authenticated %}
     <a href="" class="btn">make appointment</a>
     <div id="menu-btn" class="fas fa-bars"></div>
-  
+  {% endif %}
   </header>
   <!-- end header -->
-  
+  <br><br><br><br><br><br><br><br>
+  {% block content %}{% endblock content %}
 </body>
 <script src="script.js"></script>
 </html>

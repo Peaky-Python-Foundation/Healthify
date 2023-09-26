@@ -1,0 +1,155 @@
+
+             *, *:after, *:before {
+                box-sizing: border-box;
+                padding: 0;
+                margin: 0;
+                font-family: sans-serif;
+                }
+                body {
+                min-height: 100vh;
+                background-color: #fff;
+                }
+                .grid {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                height: 100vh;
+                }
+                .order__left {
+                order: 1;
+                padding:  40px;
+                }
+                .order__right {
+                order: 2;
+                }
+                .centered {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                }
+                .no__overflow {
+                display: flex;
+                align-items: center;
+                overflow: hidden;
+                }
+                .form {
+                max-width: 500px;
+                }
+                .logo {
+                margin-bottom: 12px;
+                }
+                h4 {
+                color: #867992;
+                text-align: left;
+                margin-bottom: 30px;
+                letter-spacing: 0.2px;
+                line-height: 20px;
+                }
+                input[type=text], input[type=password] {
+                width: 100%;
+                padding: 12px 16px;
+                margin: 16px 0;
+                display: block;
+                border: 1px solid #c8c3cf;
+                border-radius: 4px;
+                box-sizing: border-box;
+                background-color: #F6F5F7;
+                font-size: 16px;
+                color: #4F4659;
+                outline: none;
+                transition: box-shadow 0.25s ease-in-out,  background-image 0.25s;
+                }
+                input[type=text]:focus, input[type=password]:focus {
+                border-color: #A26ED4;
+                background: #FAF8FD;
+                background: #FDFCFE;
+                box-shadow: 0 0 0 0.25rem #ebd6ff;
+                }
+                ::-webkit-input-placeholder {
+                color: #A29CA8;
+                }
+                :-ms-input-placeholder {
+                color: #A29CA8;
+                } ::placeholder {
+                color: #A29CA8;
+                }
+                .justify__space_between {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                margin: 30px 0 26px 0;
+                }
+                input[type=checkbox], label {
+                margin-right: 4px;
+                cursor: pointer;
+                outline-color: #B595D4;
+                }
+                .remember_me, .signup {
+                color: #867992;
+                }
+                .forgot__password {
+                color: #551A8B;
+                text-align: left;
+                outline-color: #B595D4;
+                }
+                .forgot__password:active {
+                color: #867992;
+                }
+                .login__button {
+                outline-color: #734E96;
+                width: 100%;
+                border: none;
+                background-color: #A26ED4;
+                padding: 13px 17px;
+                color: #fff;
+                border-radius: 0.25rem;
+                font-size: 16px;
+                cursor: pointer;
+                transition: box-shadow 0.25s ease-in-out, background-color 0.3s;
+                }
+                .login__button:hover {
+                box-shadow: 0 0 0 0.25rem #DAC5EE;
+                }
+                .login__button:active {
+                background-color: #874DBF;
+                box-shadow: 0 0 0 0.35rem #DAC5EE;
+                }
+                .signup {
+                font-size: 14px;
+                text-align: center;
+                margin-top: 32px;
+                }
+                .img {
+                height: 100%;
+                object-fit: cover;
+                max-width: auto;
+                }
+                @media only screen and (max-width:  800px) {
+                .grid {
+                grid-template-columns: auto;
+                }
+                .order__left {
+                order: 2;
+                padding: 20px;
+                }
+                .order__right {
+                order: 1;
+                }
+                .centered {
+                align-items: flex-start;
+                }      
+                .no__overflow {
+                align-items: flex-start;
+                }
+                h4 {
+                text-align: center;
+                }
+                .img {
+                width: 100vw;
+                }
+                }
+                @media only screen and (max-height:  600px) {
+                .img {
+                width: 120%;
+                }
+                }
+       

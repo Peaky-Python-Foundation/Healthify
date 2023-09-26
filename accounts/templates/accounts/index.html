@@ -27,9 +27,25 @@
       <a href="#blog">blog</a>
     </nav>
     <!--   end navbar -->
-    <a href="" class="btn">make appointment</a>
+
+    {% if user.is_authenticated %}
+    {% if user.is_patient %}
+    <a href="{% url 'list_doctors' %}" class="btn">make appointment</a>
+    <a href="{% url 'logout' %}"  class="btn">Logout</a>
+    {% else %}
+    <a href="{% url 'view_details' user.pk %}" class="btn">view appointment</a>
+    <a href="{% url 'logout' %}"  class="btn">Logout</a>
+    {% endif %}
+    
+    <div id="menu-btn" class="fas fa-bars">
+      
+    </div>
+
+    {% else %}
+    <a href="{% url 'login' %}" class="btn">Login</a>
     <div id="menu-btn" class="fas fa-bars"></div>
-  
+
+    {% endif %}
   </header>
   <!-- end header -->
   
@@ -156,6 +172,7 @@
   
         <ul>
             <li><i class="fas fa-check"></i> Health Specialist</li>
+            <li><i class="fas fa-check"></i> Chat Support</li>
             <li><i class="fas fa-check"></i> Health inspection</li>
             <li><i class="fas fa-check"></i> All Lab Test Access </li>
             <li><i class="fas fa-check"></i> Nutrional Diet</li>
@@ -364,5 +381,5 @@
   <!-- end footer -->
   
 </body>
-<script src="script.js"></script>
+<script src="{% static 'js/script.js' %}"></script>
 </html>

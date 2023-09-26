@@ -1,0 +1,79 @@
+{% comment %} {% extends 'accounts/nav.html' %}
+
+{% block content %}
+<h1>Sign up as:</h1>
+<ul>
+    <li class="mb-5">
+        <a href="{% url 'signup_doctor' %}">
+        <div class="btn btn-lg btn-primary">
+
+           I am a Doctor
+        </div>
+    </a>
+    </li>
+    <li><a href="{% url 'signup_patient' %}">
+        
+        <div class="btn btn-lg btn-primary">
+        
+            I am a Patient
+        </div>
+        </a>
+        </li>
+</ul>
+{% endblock content %} {% endcomment %}
+
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/login.css' %}">
+</head>
+
+<body>
+
+
+    
+    <div class="grid">
+        <div class="order__left centered">
+           <div class="form">
+              <div class="logo">
+                 <h1 style="    color: darkorchid;
+                 font-size: xxx-large;
+                 
+
+             ">Signup as</h1>
+              </div>
+<br><br>
+              <h4>
+              We're re-branding Healthify by calling it "benefits" for you because we can live without you, but you can't live without us.
+              </h4>
+              
+              <div class="justify__space_between">   
+                <button type="submit" class="login__button" > <a href="{% url 'signup_patient' %} " style="text-decoration: none;"> Patient </a></button>
+              </div>
+              
+              <button type="submit" class="login__button" ><a href="{% url 'signup_doctor' %}" style="text-decoration: none;"> Doctor </a></button>
+            
+              
+              <div class="signup">
+                 <label class="remember_me">
+                 <span style="font-size:15px;"> If Account Exist <span> </label><a href="{% url 'login' %}" class="forgot__password" style="text-decoration: none;"><strong>Login.</strong></a>
+              </div>
+
+           </div>
+        </div><!-- order__left centered -->
+        
+        <div class="order__right centered no__overflow">
+           <img class="img" src="https://res.cloudinary.com/diod8pjhj/image/upload/v1670658158/3d1920_e2qpuj.jpg" alt="picture">
+        </div><!-- order__right centered no__overflow -->
+
+     </div><!-- end grid -->
+
+</div>
+</body>
+</html>
